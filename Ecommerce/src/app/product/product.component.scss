@@ -1,0 +1,96 @@
+.cont{
+    height: 200px;
+    padding: 25px;
+    h2 {
+        color: white;
+    }
+    button{
+        margin-top: -40px;
+        margin-right: 10px;
+        float: right;
+    }
+}
+.test{
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 700px;
+    padding: 50px 20px 50px 20px;
+}
+.contt{
+    margin: -100px 0px 0px 0px;
+}
+.Imgs{
+    display: block;
+    li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0px 30px 10px 0px;
+    }
+}
+.card-body{
+    padding: 20px;
+    h4{
+        color: #4e54c8;
+        font-weight: 600;
+        font-size: xx-large;
+        margin-bottom:1em;
+        margin-left: 40px;
+    }
+    span{
+        color: black;
+        font-weight: 700;
+        font-size: xx-large;
+    }
+    h1{
+        text-align: center;
+        color: #6a70e7;
+        font-weight: 600;
+        font-size: 50px;
+        margin-bottom:1em;
+        margin-left: 70px;
+    }
+    .form-group{
+        margin: 40px;
+        text-align: center;
+        input{
+            width: 310px;
+        }
+        button{
+            width: 310px;
+        }
+    }
+}
+
+.accordion{
+    padding: 0px 0px 20px 40px ;
+}
+.card-header{
+    padding:5px ;
+}
+.fa-star {
+    color: gray;
+    cursor: pointer;
+    padding: 0.0625rem;
+}
+.fa-star.gold {
+	color: #ffdc0f;
+}
+
+.rating {
+    display: inline;
+}
+
+.stars {
+    display: inline-flex;
+    margin: 0em 3em 3em 0em;
+    font-size: 1em;
+}
+
+.stars:hover .fa-star {
+    color: #ffdc0f;
+}
+
+.stars .fa-star:hover ~ .fa-star {
+    color: gray;
+}
+

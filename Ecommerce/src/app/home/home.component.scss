@@ -1,0 +1,43 @@
+.vend{
+    background-image: url(../../assets/Vend.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 500px;
+    padding: 80px 0px 0px 700px ;
+    button{
+        margin-top: 70px;
+    }
+}
+.carousel-caption{
+    margin : 0px 300px 100px -90px;
+    text-align: left;
+}
+.carousel-caption p{
+    margin-bottom: 50px;
+} 
+.Mbox{
+    height : 100%;
+    width : 300px;
+    margin : 20px 60px;
+}
+.Box{
+    display : flex;
+    justify-content: center;
+    margin : 30px 20px;
+}
+.Back{
+    text-align : center;
+    padding : 100px  100px 0px;
+    height : 462px;
+}
+.H{
+    font: normal 40px/1 Verdana, Geneva, sans-serif;
+    color: #ffffff;
+}
+.P{
+    color: white;
+    margin-top: 30px;
+}
+.cont{
+    padding: 70px;
+}

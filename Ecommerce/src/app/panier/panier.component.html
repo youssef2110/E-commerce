@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="cont bg-dark">
+    <h2>Votre Panier</h2>
+    <div class="row">
+        <h4>Produits</h4>
+        <Button routerLink="/Shop" class="btn btn-outline-danger"><i class="fas fa-angle-left"></i> Continue shopping</Button>
+    </div>
+</div>
+<div class="contt">
+    <div style="text-align: center;" class="card test bg-light">
+        <h5>Total</h5>
+        <h5>{{price}} Dhs</h5>
+        <hr>
+        <label class="mb-3" for="order-comments">
+          <span class="badge badge-info font-size-xs mr-2">Note</span>
+          <span class="font-weight-medium">Comments ...</span>
+        </label>
+        <textarea class="form-control" rows="6" ></textarea>
+        <button (click)="Cheek()" class="btn btn-danger btn-shadow btn-block mt-4">
+            <i class="fas fa-credit-card"></i> Proceed to Checkout
+        </button>
+    </div>
+    <div *ngFor="let p of pro" class="cart">
+        <div class="card mb-3" style="max-width: 780px; border: none;">
+            <div class="row no-gutters">
+              <div class="col-md-3">
+                <img src="{{p.url1}}" height="150px" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">{{p.product_name}}</h3>
+                  <p class="card-text">{{p.product_description}}</p>
+                  <h4 class="card-text" style="color: #4e54c8;;">{{p.product_price}} Dhs x{{p.quantity}}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>  
+    </div>
+</div>
+
+<app-footer></app-footer>

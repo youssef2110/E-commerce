@@ -1,0 +1,106 @@
+<div class="cont bg-dark">
+    <button style="float: right; margin: 80px 30px 0px 0px;" routerLink='/vendeur' class="btn btn-outline-danger"> < back</button>
+</div>
+<div class="Cont">
+    <form [formGroup]="AddForm" (ngSubmit)="OnSubmit()" class="form-horizontal  bg-light">
+        <!-- Form Name -->
+        <legend>PRODUCTS</legend>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Nom</label>
+            <div class="col-md-12">
+                <input name="product_name" placeholder="PRODUCT NAME" formControlName="product_name" class="form-control input-md" type="text">
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Catégorie</label>
+            <div class="col-md-12">
+                <select id="product_categorie" name="product_categorie" formControlName="product_categorie" class="form-control" (change)="medical($event)">
+                    <option value="">--CATEGORIE--</option>
+                    <option value="typea">Agriculture et Argane</option>
+                    <option value="typeb">Plantes aromatiques et médicinale</option>
+                    <option value="typec">Artisanat</option>
+                </select>
+                
+            </div>
+
+        </div>
+        
+        <div *ngIf="med" class="form-group">
+            <label class="col-md-4 control-label">Maladie</label>
+            <div class="col-md-12">
+                <select name="maladie" class="form-control" multiple="multiple" (change)="ee($event)"  >
+                    <option value="">--MALADIE--</option>
+                    <option *ngFor="let a of malade" [value]="a">{{a}}</option>
+                </select>
+            </div>
+            <div class="col-md-12">
+                <input type="test" [value]="table" class="form-control input-md" formControlName="product_for">
+            </div>
+            
+        </div>
+
+        <div style="padding :5px;" class="form-row">
+        <!-- Text input-->
+        <div class="form-group col-md-6">
+            <label class="col-md-4 control-label">Quantité</label>
+            <div class="col-md-12">
+                <input name="available_quantity" placeholder="AVAILABLE QUANTITY" formControlName="available_quantity"  class="form-control input-md"
+                    required="" type="number">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group col-md-6">
+            <label class="col-md-4 control-label">Prix</label>
+            <div class="col-md-12">
+                <input name="product_price" placeholder="PRODUCT PRICE" formControlName="product_price"  class="form-control input-md" required=""
+                    type="number">
+            </div>
+        </div>
+        </div>
+
+        
+        <!-- File Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Image Principale</label>
+            <div class="col-md-4">
+                <input name="filebutton" class="input-file" formControlName="filebutton" (change)="upload($event)"  type="file">
+            </div>
+        </div>
+        <div style="padding :5px;" class="form-row">
+        <!-- File Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Image 2</label>
+            <div class="col-md-4">
+                <input name="filebutton2" class="input-file" formControlName="filebutton2" (change)="upload2($event)"  type="file">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Image 3</label>
+            <div class="col-md-4">
+                <input name="filebutton3" class="input-file" formControlName="filebutton3" (change)="upload3($event)"  type="file">
+            </div>
+        </div>
+        <!-- Textarea -->
+        </div>
+        <p style="color: red;text-align: center;margin-top: 20px;">Il faut remplir tous les images !!!</p>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Description</label>
+            <div class="col-md-12">
+                <textarea class="form-control" name="product_description" formControlName="product_description" ></textarea>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <div class="col-md-4">
+                <button name="singlebutton" class="btn btn-primary">Ajouter</button>
+            </div>
+        </div>
+
+    </form>
+</div>

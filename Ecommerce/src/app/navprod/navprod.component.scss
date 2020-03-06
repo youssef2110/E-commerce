@@ -1,0 +1,16 @@
+.vertical-nav{
+    position: absolute;
+    margin : -100px 0px 0px 30px;
+    width: 300px;
+    padding: 30px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.57);
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.57);
+}
+ul{
+    margin-left: 20px;
+}
+li {
+    cursor: pointer;
+}

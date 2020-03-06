@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+<div *ngIf="load" class="cont bg-dark">
+    <h2>{{pro.product_name}}</h2>
+    <button (click)="Retour()" class="btn btn-outline-danger">Retour</button>
+</div>
+<div *ngIf="load" class="contt">
+    <div class="card test bg-light">
+        <div class="row no-gutters">
+            <div class="Imgs">
+                <li><img src="{{pro.url2}}" height="100px" width="100px"></li>
+                <li><img src="{{pro.url3}}" height="100px" width="100px"></li>
+            </div>
+            <div>
+                <img src="{{pro.url1}}" height="600px" width="550px">
+            </div>
+            <div class="col-md-4">
+                <div class="card-body">
+                    <!--<div class="rating">
+                        <div class="stars">
+                            <i class="fa fa-star gold"></i>
+                            <i class="fa fa-star gold"></i>
+                            <i class="fa fa-star gold"></i>
+                            <i class="fa fa-star gold"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <a href="#">Voir les avis.</a>
+                    </div>-->
+                    <h4><span>Prix : </span>{{pro.product_price}} DHS</h4>
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header bg-white" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn " type="button" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Infor Produit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button style="border: none; background: transparent;"><i class="fas fa-chevron-down"></i></button>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    {{pro.product_description}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header bg-white" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        options de la livraison &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button style="border: none; background: transparent;"><i class="fas fa-chevron-down"></i></button>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Livraison gratuite <i class="far fa-thumbs-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <h5 >Quantité Disponible : {{pro.available_quantity}} P</h5><br>
+                            <hr>
+                            <input placeholder="Quantité" [(ngModel)]="quantity" name="quantity" type="number" class="form-control" min="1"><br>
+                            <button (click)="Addtopanier(pro._id)" type="submit" class="btn btn-primary">Ajouter au panier</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

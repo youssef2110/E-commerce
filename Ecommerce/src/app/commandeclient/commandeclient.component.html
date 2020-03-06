@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="cont bg-dark">
+    <h2>Vos Commande</h2>
+    <Button routerLink="/Shop" class="btn btn-outline-danger"><i class="fas fa-angle-left"></i> Retour</Button>
+</div>
+<div class="contt">
+    <div *ngFor="let p of pro" class="cart">
+        <div class="card mb-3" style="max-width: 780px; border: none;">
+            <div class="row no-gutters">
+              <div class="col-md-3">
+                <img src="{{p.url1}}" height="150px" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">{{p.product_name}}</h3>
+                  <p class="card-text">{{p.product_description}}</p>
+                  <h4 class="card-text" style="color: #4e54c8;;">{{p.product_price}} Dhs</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>  
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,26 @@
+.C{
+    height: 700px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.Cont{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: white;
+    form{
+        padding : 50px 81px;
+    }
+    input{
+        width: 500px;
+        margin-bottom: 30px;
+    }
+}
+.btn-outline-dark{
+    padding : 30px 124px 30px 124px ;
+    border: none;
+    border-radius: 0px;
+}
+.btn-outline-dark:hover{
+    color: #343a40;
+}

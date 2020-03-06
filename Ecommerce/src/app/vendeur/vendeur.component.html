@@ -1,0 +1,128 @@
+<app-navbarvend></app-navbarvend>
+<div class="vertical-nav bg-light" id="sidebar">
+    <ul class="nav flex-column bg-light mb-0">
+      <li class="nav-item">
+        <a routerLink="/newprod" class="nav-link text-dark font-italic ">
+                  <i class="fa fa-th-large"></i> &nbsp;&nbsp; 
+                  Ajouter produit
+              </a>
+      </li>
+      <li *ngIf="!g" class="nav-item">
+        <a (click)="Cmd()" class="nav-link text-dark font-italic">
+                  <i class="fa fa-address-card"></i> &nbsp;&nbsp; 
+                  Gestion Commandes
+              </a>
+      </li>
+      <li *ngIf="g" class="nav-item">
+        <a (click)="prod()" class="nav-link text-dark font-italic">
+                  <i class="fa fa-cubes "></i> &nbsp;&nbsp; 
+                  Produits
+              </a>
+      </li>
+  </ul>
+  </div>
+<div *ngIf="edd" class="lisser">
+<button *ngIf="yoo"  style="margin-bottom: 20px;" (click)="retour2()" class="btn btn-outline-dark"> < Retour</button>
+  <div *ngIf="!g"  class="card-columns">
+    <div *ngFor="let pro of product" class="card cc"  style="width: 16rem;">
+        <a>
+            <img src="{{pro.url1}}"  width="130" height="220" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{pro.product_name}}</h5>
+                <button class="btn btn-success" (click)="edit(pro._id,pro.product_name,pro.product_categorie,pro.available_quantity,pro.product_price,pro.product_description)"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-danger" (click)="del(pro._id,pro.Images)"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </a>
+    </div>
+</div>
+  <div *ngIf="g" class="card-columns">
+    <div *ngIf="yo">
+        <div *ngFor="let c of cmd" class="card cc"  style="width: 18rem;">
+            <img src="{{c.product.url1}}"  width="130" height="220" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{c.product.product_name}}</h5>
+                <button (click)="details(c.product._id)" class="btn btn-dark">Voir Details</button>
+                <button (click)="changeetat(c._id,c.Etat)" class="btn btn-primary">{{c.Etat}}</button>
+            </div>
+          </div>
+    </div>
+    <div *ngIf="yoo">
+        <div *ngFor="let c of cmddetails">
+            <div  class="card mb-6 " style="width: 500px;" >
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{c.product.url1}}" height="200" width="200" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">{{c.product.product_name}}</h3><br>
+                            <p class="card-text">Quantité : {{c.product.quantity}} Piéce(s)</p>
+                            <p class="card-text">Total : {{c.product.quantity * c.product.quantity}}DHS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-3 text-white bg-success" style="max-width: 18rem; margin-left: 200px ;">
+                <div class="card-header">Information du client</div>
+                <div class="card-body">
+                  <h5 class="card-title">{{c.Nom}}</h5>
+                  <h5 class="card-title">0{{c.Telephone}}</h5>
+                  <h5 class="card-title">{{c.Adresse}},{{c.ZipCode}},{{c.Ville}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!edd" class="lisser">
+    <button style="margin-bottom: 20px;" (click)="retour()" class="btn btn-outline-dark"> < Retour</button>
+
+  <form #f="ngForm" class="form-horizontal  bg-light">
+    
+    <div class="form-group">
+        <label class="col-md-4 control-label">Nom</label>
+        <div class="col-md-12">
+            <input name="product_name" [(ngModel)]="product_name" class="form-control input-md" type="text">
+        </div>
+    </div>
+
+
+    <div style="padding :5px;" class="form-row">
+    <!-- Text input-->
+    <div class="form-group col-md-6">
+        <label class="col-md-4 control-label">Quantité</label>
+        <div class="col-md-12">
+            <input name="available_quantity" [(ngModel)]="available_quantity" class="form-control input-md"
+                required="" type="number">
+        </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group col-md-6">
+        <label class="col-md-4 control-label">Prix</label>
+        <div class="col-md-12">
+            <input name="product_price" [(ngModel)]="product_price" class="form-control input-md" required=""
+                type="number">
+        </div>
+    </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-4 control-label">Description</label>
+        <div class="col-md-12">
+            <textarea class="form-control" name="product_description" [(ngModel)]="product_description" ></textarea>
+        </div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group">
+        <div class="col-md-4">
+            <button name="singlebutton" class="btn btn-primary" (click)="edit2(f)">Modifier</button>
+        </div>
+    </div>
+
+</form>
+</div>
+
